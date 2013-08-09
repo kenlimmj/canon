@@ -68,7 +68,7 @@ body {
   float:left;
 
   width: #{(6*$col-width)+($line-width)}vw;
-  height: #{(6*$row-width)-($line-width)}px;
+  height: #{(6*$row-width)+(15*$line-width)}px;
 
   margin-top: #{($row-width)-(15*$line-width)}px;
   margin-left: #{(2*$col-width)-($line-width)}vw;

@@ -1,0 +1,74 @@
+// J. A. Van de Graaf Canon
+
+$num-col: 18;
+$num-row: 9;
+
+$height: 1080;
+
+$col-width: 100/$num-col;
+$row-width: $height/$num-row;
+
+$opacity: 10%;
+
+$line-width: 0.15;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: #{$height}px;
+}
+
+.vandegraaf-container {
+  position: absolute;
+
+  width: 100vw;
+  height: #{$height}px;
+
+  font-family: 'Helvetica Neue','Helvetica',Arial,sans-serif;
+  font-smoothing: antialiased;
+  font-weight: 100;
+
+  opacity: $opacity;
+}
+
+.vandegraaf-col {
+  float: left;
+
+  width: #{9*$col-width}vw;
+  height: inherit;
+
+  line-height: #{$row-width}px;
+  text-align: center;
+
+  border-right: #{$line-width}rem solid #FE48FF;
+
+  opacity: $opacity;
+}
+
+.vandegraaf-box {
+  float:left;
+
+  width: #{(6*$col-width)+($line-width)}vw;
+  height: #{(6*$row-width)-($line-width)}px;
+
+  margin-top: #{($row-width)-(15*$line-width)}px;
+  margin-left: #{(2*$col-width)-($line-width)}vw;
+
+  border: #{$line-width}rem solid #FE48FF;
+
+  overflow: hidden;
+}
+
+.vandegraaf-circle {
+  float: left;
+  margin-top: #{($row-width)-($line-width)}px;
+
+  width: #{(9*$col-width)}vw;
+  height: #{(9*$col-width)}vw;
+
+  border-radius: 50%;
+  border: #{$line-width}rem solid #4CFFFF;
+}

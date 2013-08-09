@@ -1,0 +1,79 @@
+// Raul Rosario's Gutenberg Page Canon
+
+$num-col: 18;
+$num-row: 9;
+
+$height: 1080;
+
+$col-width: 100/$num-col;
+$row-width: $height/$num-row;
+
+$opacity: 10%;
+
+$line-width: 0.15;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: #{$height}px;
+}
+
+.gutenberg-container {
+  font-family: 'Helvetica Neue','Helvetica',Arial,sans-serif;
+  font-smoothing: antialiased;
+  font-weight: 100;
+  position: absolute;
+  width: 100vw;
+  height: #{$height}px;
+  opacity: $opacity;
+}
+
+.gutenberg-col {
+  float: left;
+
+  width: #{$col-width}vw;
+  height: inherit;
+
+  line-height: #{$row-width}px;
+  text-align: center;
+
+  border-right: #{$line-width}rem solid #4CFFFF;
+  &:nth-child(#{$num-col/2}) {
+    border-right: #{$line-width}rem solid #FE48FF;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.gutenberg-row {
+  float: left;
+
+  width: inherit;
+  height: #{$row-width}px;
+
+  line-height: #{$row-width}px;
+  padding-left: #{$col-width/2.3}vw;
+
+  border-bottom: 0.15rem solid #4CFFFF;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.gutenberg-box {
+  float:left;
+
+  width: #{(6*$col-width)+($line-width)}vw;
+  height: #{(6*$row-width)-($line-width)}px;
+
+  margin-top: #{($row-width)-(15*$line-width)}px;
+  margin-left: #{(2*$col-width)-($line-width)}vw;
+
+  border: #{$line-width}rem solid #FE48FF;
+
+  overflow: hidden;
+}
